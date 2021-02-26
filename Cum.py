@@ -19,6 +19,9 @@ def main():
     for i in range(25):
         Thread(target=f)
 
+    while True:
+        pass
+
 
 if __name__ == '__main__':
     main()
