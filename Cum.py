@@ -12,6 +12,7 @@ def f():
         y = random.randint(0, 1080)
         print("Y:", y)
         pyautogui.moveTo(x, y, duration=0)
+        pyautogui.click()
 
 
 for i in range(25):
