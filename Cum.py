@@ -4,7 +4,6 @@ from threading import Thread
 
 
 def f():
-    pyautogui.FAILSAFE = False
     while True:
         print("going to")
         x = random.randint(0, 1920)
