@@ -1,23 +1,24 @@
-import pyautogui 
+import pyautogui
 import random
-from multiprocessing import Process
+from threading import Thread
+
 
 def f():
-    FAILSAFE = False
+    pyautogui.FAILSAFE = False
     while True:
         print("going to")
         x = random.randint(0, 1920)
-        print("X:",x)
+        print("X:", x)
         y = random.randint(0, 1080)
-        print("Y:",y)
+        print("Y:", y)
         pyautogui.moveTo(x, y, duration = 0)
 
+
 def main():
-    
-    for i in range(int(input())):
-        p = Process(target=f)
-        p.start()
-    p.join()
+
+    for i in range(25):
+        Thread(target=f)
+
 
 if __name__ == '__main__':
     main()
