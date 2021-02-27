@@ -1,6 +1,6 @@
 import pyautogui
 import random
-from threading import Thread
+import threading
 
 
 def f():
@@ -16,7 +16,8 @@ def f():
 
 
 for i in range(25):
-    Thread(target=f())
+    x = threading.Thread(target=f())
 
+x.start()
 while True:
     pass
