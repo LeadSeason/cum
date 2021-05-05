@@ -16,7 +16,7 @@ def f():
 
 
 for i in range(25):
-    Thread(target=f())
+    Thread(target=f)
 
 while True:
     pass
