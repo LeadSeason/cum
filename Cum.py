@@ -1,10 +1,14 @@
 import pyautogui
 import random
+from multiprocessing import Process
+from multiprocessing import cpu_count
 from threading import Thread
 
 
 def f():
     pyautogui.FAILSAFE = False
+    pyautogui.PAUSE = 0.1
+
     while True:
         print("going to")
         x = random.randint(0, 1920)
@@ -15,8 +19,12 @@ def f():
         pyautogui.click()
 
 
-for i in range(25):
-    Thread(target=f)
+def main():
+    for _ in range(1):
+        p = Process(target=f)
+        p.start()
+    p.join()
 
-while True:
-    pass
+
+if __name__ == '__main__':
+    main()
